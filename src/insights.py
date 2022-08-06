@@ -1,3 +1,6 @@
+from src.jobs import read
+
+
 def get_unique_job_types(path):
     """Checks all different job types and returns a list of them
 
@@ -13,7 +16,12 @@ def get_unique_job_types(path):
     list
         List of unique job types
     """
-    return []
+    jobs = read(path)
+    list = []
+    for row in jobs:
+        if row['job_type'] not in list:
+            list.append(row['job_type'])
+    return list
 
 
 def filter_by_job_type(jobs, job_type):
@@ -31,7 +39,11 @@ def filter_by_job_type(jobs, job_type):
     list
         List of jobs with provided job_type
     """
-    return []
+    list = []
+    for row in jobs:
+        list.append(row[job_type])
+        # if row['job_type'] not in list:
+    return list
 
 
 def get_unique_industries(path):
@@ -49,7 +61,15 @@ def get_unique_industries(path):
     list
         List of unique industries
     """
-    return []
+    jobs = read(path)
+    list = []
+
+    for row in jobs:
+        if row['industry'] == '':
+            continue
+        if row['industry'] not in list:
+            list.append(row['industry'])
+    return list
 
 
 def filter_by_industry(jobs, industry):
@@ -85,7 +105,19 @@ def get_max_salary(path):
     int
         The maximum salary paid out of all job opportunities
     """
-    pass
+
+    jobs = read(path)
+    max = 0
+
+    for row in jobs:
+        atual = (row['max_salary'])
+        if atual == '':
+            pass
+        else:
+            convert = int(atual)
+            if convert > max:
+                max = convert
+    return max
 
 
 def get_min_salary(path):
@@ -103,7 +135,19 @@ def get_min_salary(path):
     int
         The minimum salary paid out of all job opportunities
     """
-    pass
+    jobs = read(path)
+    min = 383416
+
+    for row in jobs:
+        atual = (row['min_salary'])
+        if atual == '':
+            pass
+        else:
+            convert = int(atual)
+            if convert < min:
+                min = convert
+    print(min)
+    return min
 
 
 def matches_salary_range(job, salary):
