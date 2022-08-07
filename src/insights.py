@@ -41,8 +41,8 @@ def filter_by_job_type(jobs, job_type):
     """
     list = []
     for row in jobs:
-        list.append(row[job_type])
-        # if row['job_type'] not in list:
+        if row['job_type'] == job_type:
+            list.append(row)
     return list
 
 
@@ -87,6 +87,12 @@ def filter_by_industry(jobs, industry):
     list
         List of jobs with provided industry
     """
+
+    list = []
+    for row in jobs:
+        if row['industry'] == industry:
+            list.append(row)
+    return list
     return []
 
 
