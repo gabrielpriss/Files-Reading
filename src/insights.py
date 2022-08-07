@@ -111,12 +111,12 @@ def get_max_salary(path):
 
     for row in jobs:
         atual = (row['max_salary'])
-        if atual == '':
-            pass
-        else:
+        if atual.isnumeric():
             convert = int(atual)
             if convert > max:
                 max = convert
+        else:
+            continue
     return max
 
 
@@ -136,17 +136,16 @@ def get_min_salary(path):
         The minimum salary paid out of all job opportunities
     """
     jobs = read(path)
-    min = 383416
+    min = 9999999
 
     for row in jobs:
         atual = (row['min_salary'])
-        if atual == '':
-            pass
-        else:
+        if atual.isnumeric():
             convert = int(atual)
             if convert < min:
                 min = convert
-    print(min)
+        else:
+            continue
     return min
 
 
