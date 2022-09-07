@@ -1,8 +1,8 @@
-# Boas-vindas ao repositório do Job Insights!
+# Boas-vindas ao repositório do projeto File Reader!
 
 <details>
-  <summary><strong> Leitura de Arquivos</strong></summary><br />
-  Neste projeto desenvolvido durante o curso da Trybe, implementei análises de um conjunto de dados sobre empregos. As implementações foram incorporadas a um aplicativo Web desenvolvido com Flask.
+  <summary><strong> File Reader</strong></summary><br />
+  Neste projeto desenvolvido durante o curso da Trybe, implementei análises de um conjunto de dados sobre empregos, retirados de um arquivo CSV. As implementações foram incorporadas a um aplicativo Web desenvolvido com Flask.
 
 </details>
 
